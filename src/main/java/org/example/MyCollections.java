@@ -26,7 +26,7 @@ public class MyCollections {
      *
      * @param list the list to be sorted
      * @param <T>  the type of elements in the list
-     * @throws ClassCastException if any element in the list does not implement {@link Comparable}
+     * @throws ClassCastException   if any element in the list does not implement {@link Comparable}
      * @throws NullPointerException if the list is null
      */
     public static <T> void sort(MyArrayList<T> list) {

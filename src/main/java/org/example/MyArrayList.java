@@ -31,12 +31,14 @@ public class MyArrayList<T> {
      * An empty array used for lists with an initial capacity of zero.
      */
     private static final Object[] EMPTY_ELEMENTDATA = {};
+
     /**
      * Creates a list with the default capacity.
      */
     public MyArrayList() {
         elementData = new Object[DEFAULT_CAPACITY];
     }
+
     /**
      * Creates a list with the specified initial capacity.
      *
@@ -53,6 +55,7 @@ public class MyArrayList<T> {
                     initialCapacity);
         }
     }
+
     /**
      * Checks if the list is empty.
      *
@@ -61,6 +64,7 @@ public class MyArrayList<T> {
     public boolean isEmpty() {
         return size == 0;
     }
+
     /**
      * Converts the list to an array containing all of its elements.
      *
@@ -69,6 +73,7 @@ public class MyArrayList<T> {
     public Object[] toArray() {
         return Arrays.copyOf(elementData, size);
     }
+
     /**
      * Adds an element to the end of the list.
      *
@@ -78,6 +83,7 @@ public class MyArrayList<T> {
         ensureCapacity(size + 1);
         elementData[size++] = element;
     }
+
     /**
      * Retrieves the element at the specified index.
      *
@@ -90,6 +96,7 @@ public class MyArrayList<T> {
         rangeCheck(index);
         return (T) elementData[index];
     }
+
     /**
      * Removes the element at the specified index.
      *
@@ -108,6 +115,7 @@ public class MyArrayList<T> {
         elementData[--size] = null;
         return removeElem;
     }
+
     /**
      * Removes the first occurrence of the specified element from the list, if present.
      *
@@ -134,6 +142,7 @@ public class MyArrayList<T> {
         removeObj(localElems, i);
         return true;
     }
+
     /**
      * Removes an element at the specified index and shifts subsequent elements to the left.
      *
@@ -146,6 +155,7 @@ public class MyArrayList<T> {
             System.arraycopy(elements, i + 1, elements, i, newSize - i);
         elements[size = newSize] = null;
     }
+
     /**
      * Adds an element at the specified index.
      *
@@ -160,6 +170,7 @@ public class MyArrayList<T> {
         elementData[index] = element;
         size++;
     }
+
     /**
      * Removes all elements from the list.
      */
@@ -168,6 +179,7 @@ public class MyArrayList<T> {
         for (int start = size, i = size = 0; i < start; i++)
             localElems[i] = null;
     }
+
     /**
      * Replaces the element at the specified index with a new element.
      *
@@ -179,6 +191,7 @@ public class MyArrayList<T> {
         rangeCheck(index);
         elementData[index] = element;
     }
+
     /**
      * Ensures that the list has enough capacity to hold the specified minimum number of elements.
      *
@@ -190,6 +203,7 @@ public class MyArrayList<T> {
             elementData = Arrays.copyOf(elementData, newCapacity);
         }
     }
+
     /**
      * Checks if the index is within the valid range.
      *
@@ -201,6 +215,7 @@ public class MyArrayList<T> {
             throw new IndexOutOfBoundsException(
                     String.format("Index %d, Size %d", index, size));
     }
+
     /**
      * Returns the number of elements in the list.
      *
